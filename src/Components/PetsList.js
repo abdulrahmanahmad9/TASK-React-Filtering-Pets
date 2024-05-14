@@ -3,7 +3,7 @@ import PetItem from "./PetItem";
 
 function PetsList() {
   const petList = pets.map((pet) => <PetItem pet={pet} key={pet.id} />);
-
+  const [query,setQuery]=useState('')
   return (
     <section id="doctors" className="doctor-section pt-140">
       <div className="container">
@@ -20,6 +20,7 @@ function PetsList() {
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="search-addon"
+                  onChange={(event) => setQuery(event.target.value)}
                 />
               </div>
               <br />
